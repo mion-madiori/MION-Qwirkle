@@ -4,14 +4,19 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { GamePage } from '../pages/game/game';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { PlayerComponent } from '../components/player/player';
+
+import { DbService } from '../providers/db-service';
+import {PlayerEntity} from '../entities/PlayerEntity'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     GamePage,
+    SettingsPage,
     
     PlayerComponent
   ],
@@ -22,8 +27,13 @@ import { PlayerComponent } from '../components/player/player';
   entryComponents: [
     MyApp,
     HomePage,
-    GamePage
+    GamePage,
+    SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DbService,
+    PlayerEntity
+  ]
 })
 export class AppModule {}

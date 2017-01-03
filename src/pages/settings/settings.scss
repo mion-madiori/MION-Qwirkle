@@ -1,0 +1,10 @@
+page-settings {
+    .cards{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    ion-card{
+        max-width: 30vw;
+    }
+}

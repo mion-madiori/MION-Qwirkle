@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { GamePage } from '../game/game';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -20,9 +21,12 @@ export class HomePage {
     ]
   }
 
-  validate():void{
-    console.log(this.choice)
+  gotoValidate():void{
     this.navCtrl.push(GamePage, {number: this.choice})
+  }
+
+  gotoSettings():void{
+    this.navCtrl.push(SettingsPage)
   }
 
 }

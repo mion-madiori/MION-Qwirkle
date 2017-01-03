@@ -1,4 +1,11 @@
 page-home {
+    .settingButton{
+        position: absolute;
+        color: white;
+        right: 0;
+        top: 5px;
+    }
+
     ion-navbar{
         img{
             width: 4vw;

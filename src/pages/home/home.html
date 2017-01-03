@@ -4,6 +4,9 @@
     <ion-title text-center>
       MION-Qwirkle
     </ion-title>
+    <button ion-button icon-only clear color='dark' class="settingButton" (click)='gotoSettings()'>
+      <ion-icon name="md-settings"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
@@ -20,7 +23,7 @@
           <ion-radio checked="{{player.checked}}" value='{{player.name}}'></ion-radio>
         </ion-item>
       </ion-list>
-      <button ion-button outline block (click)='validate()'>C'est parti!!!</button>
+      <button ion-button outline block (click)='gotoValidate()'>C'est parti!!!</button>
     </ion-card-content>
   </ion-card>
 </ion-content>
