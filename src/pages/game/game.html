@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title text-center>game</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="players">
+    <player *ngFor='let numb of numberOfPlayers' [uniqId]='numb'></player>
+  </div>
+</ion-content>

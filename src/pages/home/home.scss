@@ -1,3 +1,21 @@
 page-home {
+    ion-navbar{
+        img{
+            width: 4vw;
+            display: inline-block;
+            position: absolute;
+            top: 0.3vh;
+        }
+    }
 
+    ion-content{
+        /*background: url(../assets/img/bg.jpg);*/
+        background-color: #ecf0f1!important;
+    }
+
+    ion-card{
+        max-width: 35vw;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
 }
