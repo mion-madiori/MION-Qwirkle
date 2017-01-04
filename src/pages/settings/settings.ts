@@ -25,20 +25,11 @@ export class SettingsPage {
   }
 
   savePlayer():void{
-    if (this.player.name){
-      let d = new Date().getTime()
-      this.playerEntity.id = d.toString();
-      this.playerEntity.name = this.player.name;
-
-      this.dbService.insert(this.playerEntity);
-    }else{
-      this.ifError(`Vous n'avez pas entré de nom.`)
-
-    }
+    
   }
 
   testCrea(){
-    this.dbService.testCrea();
+    
   }
 
   ifError(message){

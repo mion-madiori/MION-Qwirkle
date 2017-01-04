@@ -1,10 +1,34 @@
 <div>
   <ion-card>
     <ion-card-header>
-      Mon en-tête {{uniqId}}
+      <label>{{playerName}}</label>
+      <ion-badge color='primary' item-right>{{uniqId}}</ion-badge>
+      <ion-item>
+        <ion-label>Joueur</ion-label>
+        <ion-select [(ngModel)]="playerName">
+          <ion-option value="Vincent">Vincent</ion-option>
+          <ion-option value="Céline">Céline</ion-option>
+          <ion-option value="Emy">Emy</ion-option>
+          <ion-option value="Owen">Owen</ion-option>
+          <ion-option value="Christophe L.">Christophe L.</ion-option>
+          <ion-option value="Aurore">Aurore</ion-option>
+          <ion-option value="Gaël">Gaël</ion-option>
+          <ion-option value="Stéphanie">Stéphanie</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button outline block>Valider</button>
     </ion-card-header>
     <ion-card-content>
-      mon contenu
+      <div class="operations-add">
+        <ion-fab><button ion-fab>+1</button></ion-fab>
+        <ion-fab><button ion-fab>+5</button></ion-fab>
+        <ion-fab><button ion-fab>+10</button></ion-fab>        
+      </div>
+      <div class="operations-minus">
+        <ion-fab><button ion-fab color='danger'>-10</button></ion-fab>
+        <ion-fab><button ion-fab color='danger'>-5</button></ion-fab>
+        <ion-fab><button ion-fab color='danger'>-1</button></ion-fab>
+      </div>
     </ion-card-content>
   </ion-card>
 </div>

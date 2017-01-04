@@ -16,51 +16,18 @@ export class DbService {
   `
   constructor() {
     this._dataBase = new SQLite();
-    
-    try {
-      this._dataBase.openDatabase({
-        name: 'qwirkle.db',
-        location: 'default'
-      }).then((db:SQLite) =>{
-        db
-          .executeSql(this._createQuery, {})
-          .then(()=>{
-            this._ifError('ça marche', 'Création de la base de donnée ok')
-          }, err=>{
-            this._ifError('ça marche', `Problème lors de l'execution de la requête: ${err}`);
-          })
-        }, err=>{
-          this._ifError('Erreur', `Problème à l'ouverture de la base de données: ${err}`)
-      });
-    } catch (error) {
-      this._ifError('Erreur', error)
-    }
   }
 
-  testCrea(){
-    this._dataBase = new SQLite();
-    this._ifError('info', 'test1')
-    try {
-      this._dataBase.openDatabase({
-        name: 'qwirkle.db',
-        location: 'default'
-      }).then((db:SQLite) =>{
-        db
-          .executeSql(this._createQuery, {})
-          .then(()=>{
-            this._ifError('ça marche', 'Création de la base de donnée ok')
-          }, err=>{
-            this._ifError('ça marche', `Problème lors de l'execution de la requête: ${err}`);
-          })
-        }, err=>{
-          this._ifError('Erreur', `Problème à l'ouverture de la base de données: ${err}`)
-      });
-    } catch (error) {
-      this._ifError('Erreur', error)
-    }
+  openDb(){
+    return this._dataBase.openDatabase({
+      name: 'qwirkle.db',
+      loaction: 'default'
+    });
+  }
 
-
-    this._ifError('info', 'test2')
+  createTable(){
+    let sql = 'CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)';
+    return this._dataBase.executeSql(sql, []);
   }
 
   findAll():Array<PlayerEntity>{
